@@ -21,8 +21,8 @@ namespace JsonImport
             gameData.master = new GameMasterData();
             gameData.master = JsonUtility.FromJson<GameMasterData>(JsonHelper.GetJsonFile("/", fileName, true));
 
+            UnityEditor.EditorUtility.SetDirty(gameData);
             Debug.Log(fileName + "をロードしました");
-            //MEMO: そのままではオブジェクトが保存されないので、一度配列を追加するとか編集する事
         }
 
         #endregion
